@@ -1,0 +1,118 @@
+    html { height: 100%; overflow: hidden; }
+body {background-image:url("..//images//background6.jpg"); background-repeat: no-repeat;
+  background-size: 100% 100%;margin: 0; width: 100%; height: 100%; }
+
+.scene {
+  width: 40%;
+  height: 540px;
+  margin: 1% 0px 1% 50%;
+  -webkit-perspective: 2000px;
+  perspective: 2000px;
+}
+.book {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+.page {
+  cursor: pointer;
+  position: absolute;
+  color: black;
+  width: 100%;
+  height: 100%;
+
+  -webkit-transition: 1.5s -webkit-transform;
+
+  transition: 1.5s transform;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;  
+  -webkit-transform-origin: left center;  
+  -ms-transform-origin: left center;  
+  transform-origin: left center;
+}
+.front,
+.back {
+  position: absolute;
+  
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  
+  -webkit-backface-visibility: hidden;
+  
+  backface-visibility: hidden;
+  background: -webkit-gradient(linear, 0% 0%, 100% 100%, from(#FFFFFF), to(#CCCCCC));
+  background: -webkit-gradient(linear, left top, right bottom, from(#fff), to(#ccc));
+  background: -webkit-linear-gradient(top left, #fff, #ccc);
+  background: linear-gradient(to bottom right, #fff, #ccc);
+}
+.back {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.page.active {
+  z-index: 1;
+}
+.page.flipped {
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+.page.flipped:last-of-type {
+  z-index: 1;
+}
+
+p {
+  margin: 0;
+}
+img,video{
+/*  margin: 3% 3%;
+  width:94%;
+  height: 85%;
+*/
+  display: block;
+  margin: 2% auto;
+  max-width: 97%;
+  /*min-height: 80%;*/
+  max-height: 90%;
+  width: auto;
+  height: auto;
+}
+.space{
+  height: 85%;
+  /*border: 1px solid black;*/
+}
+.space2{
+  margin:0 2%;
+  border: 1px solid black;
+}
+p{
+    font-family: "Comic Sans MS", cursive, sans-serif ;
+    text-align: center;
+}
+.typewriter p {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  /*border-right: .15em solid orange;*/
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
